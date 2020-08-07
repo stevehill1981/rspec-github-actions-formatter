@@ -1,8 +1,10 @@
-# Rspec::Github::Actions::Formatter
+# rspec-github-actions-formatter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rspec/github/actions/formatter`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a custom formatter for use with RSpec 3.9 and above.
 
-TODO: Delete this and the text above, and describe your gem
+It's designed to integrate with GitHub Actions, so that failing and
+pending specs are annotated correctly, but it also solves an issue
+I had with the way that actions handles streaming to STDOUT.
 
 ## Installation
 
@@ -20,9 +22,23 @@ Or install it yourself as:
 
     $ gem install rspec-github-actions-formatter
 
+If you're using this with Rails, you can probably just add it to
+the `test` group in your Gemfile.
+
 ## Usage
 
-TODO: Write usage instructions here
+Once you've installed the gem, you'll need to tell Rspec to use it.
+This can be done by adding this line to the `.rspec` file:
+
+    --format RspecGithubActionsFormatter
+    
+You could also require it directly when executing RSpec:
+
+    $ bundle exec rspec --format RspecGithubActionsFormatter
+
+The annotations output won't be very useful unless you're executing
+your tests within GitHub Actions, but the progress display is quite
+useful no matter where you run your tests!
 
 ## Development
 
@@ -33,7 +49,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rspec-github-actions-formatter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rspec-github-actions-formatter/blob/master/CODE_OF_CONDUCT.md).
-
 
 ## License
 
