@@ -1,7 +1,7 @@
 require "rspec/core/formatters/progress_formatter"
 
 class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   RSpec::Core::Formatters.register self, :dump_pending, :dump_failures, :example_passed, :example_pending, :example_failed, :example_started, :start
 
@@ -54,6 +54,7 @@ class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
   def split_progress_into_lines(_notification)
     if @examples_executed % @tests_per_line == 0 || @examples_executed == @example_count
       output.print progress_display(@examples_executed, @example_count)
+      output.print "\n"
     end
   end
 
