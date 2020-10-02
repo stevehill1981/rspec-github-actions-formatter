@@ -1,7 +1,7 @@
 require "rspec/core/formatters/progress_formatter"
 
 class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
 
   RSpec::Core::Formatters.register self, :dump_pending, :dump_failures, :example_passed, :example_pending, :example_failed, :example_started, :start
 
@@ -106,7 +106,7 @@ class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
   # GitHub Actions seems to set it to something silly like 40 characters, and I
   # haven't yet figured out why. Help welcome!
   def terminal_width
-    Math.max(`tput cols`.to_i, 80)
+    [`tput cols`.to_i, 80].max
   end
 
   def progress_display(executed_examples, total_examples)

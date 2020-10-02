@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "rspec-github-actions-formatter"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.3"
   spec.authors       = ["Steve Hill"]
   spec.email         = ["steve@stevehill.xyz"]
 
