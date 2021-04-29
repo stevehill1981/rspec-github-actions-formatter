@@ -1,6 +1,10 @@
+# -*- encoding: utf-8 -*-
+require File.expand_path("../lib", __FILE__)
+
 Gem::Specification.new do |spec|
   spec.name          = "rspec-github-actions-formatter"
-  spec.version       = "0.1.3"
+  spec.version       = RSpecGithubActionsFormatter::VERSION
+  spec.platform      = Gem::Platform::RUBY
   spec.authors       = ["Steve Hill"]
   spec.email         = ["steve@stevehill.xyz"]
 
