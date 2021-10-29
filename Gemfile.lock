@@ -28,6 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   rake (~> 13.0)
+  rspec (~> 3.9)
   rspec-github-actions-formatter!
 
 BUNDLED WITH
