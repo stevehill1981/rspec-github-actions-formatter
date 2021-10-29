@@ -1,4 +1,4 @@
-require File.expand_path("../lib/rspec_github_actions_formatter", __FILE__)
+require_relative "lib/rspec_github_actions_formatter"
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-github-actions-formatter"

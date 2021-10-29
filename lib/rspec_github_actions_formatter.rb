@@ -1,3 +1,5 @@
+require "rspec/core/formatters/progress_formatter"
+
 class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
   VERSION = "0.2.0"
 
