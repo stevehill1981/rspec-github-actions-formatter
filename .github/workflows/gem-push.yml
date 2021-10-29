@@ -2,13 +2,11 @@ name: Ruby Gem
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
-    name: Build + Publish
+    name: Release
     runs-on: ubuntu-latest
     permissions:
       contents: read
