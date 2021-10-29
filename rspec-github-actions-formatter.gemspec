@@ -1,6 +1,8 @@
+require File.expand_path("../lib/rspec_github_actions_formatter", __FILE__)
+
 Gem::Specification.new do |spec|
   spec.name          = "rspec-github-actions-formatter"
-  spec.version       = "0.1.3"
+  spec.version       = RspecGithubActionsFormatter::VERSION
   spec.authors       = ["Steve Hill"]
   spec.email         = ["steve@stevehill.xyz"]
 
@@ -8,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{This custom formatter provides a line-streaming output for RSpec, and will also output annotations from any pending, skipped or failing tests in the format GitHub Actions requires.}
   spec.homepage      = "https://github.com/stevehill1981/rspec-github-actions-formatter"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -23,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rspec", ">= 3.9.0"
+  spec.add_dependency "rspec", "~> 3.9"
 end

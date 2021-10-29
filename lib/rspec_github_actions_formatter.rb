@@ -1,7 +1,7 @@
 require "rspec/core/formatters/progress_formatter"
 
 class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
-  VERSION = "0.1.3"
+  VERSION = "0.2.0"
 
   RSpec::Core::Formatters.register self, :dump_pending, :dump_failures, :example_passed, :example_pending, :example_failed, :example_started, :start
 
