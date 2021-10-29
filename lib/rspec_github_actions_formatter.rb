@@ -1,3 +1,4 @@
+require "rspec/core"
 require "rspec/core/formatters/progress_formatter"
 
 class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
