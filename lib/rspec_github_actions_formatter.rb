@@ -103,11 +103,13 @@ class RspecGithubActionsFormatter < RSpec::Core::Formatters::ProgressFormatter
     location.delete_prefix("./").split(":")
   end
 
-  # If it says less than 80 columns, don't accept it.
-  # GitHub Actions seems to set it to something silly like 40 characters, and I
-  # haven't yet figured out why. Help welcome!
   def terminal_width
-    [`tput cols`.to_i, 80].max
+    @terminal_width ||= begin
+      require "io/console"
+      IO.console.winsize[1]
+    rescue LoadError, NoMethodError
+      ENV["COLUMNS"].to_i.nonzero? || 80
+    end
   end
 
   def progress_display(executed_examples, total_examples)
