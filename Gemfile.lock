@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     rspec-github-actions-formatter (0.2.0)
-      rspec (~> 3.9)
 
 GEM
   remote: https://rubygems.org/
